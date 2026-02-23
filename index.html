@@ -1,97 +1,431 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lê Trọng Hiếu | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-color: #0b0f19;
+  --text-color: #94a3b8;
+  --heading-color: #f8fafc;
+  --accent-cyan: #00d2ff;
+  --accent-blue: #3a7bd5;
+  --accent-purple: #8a2be2;
+  --card-bg: rgba(30, 41, 59, 0.5);
+}
 
-<title>Le Trong Hieu - AI Engineering Enthusiast</title>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<link rel="stylesheet" href="styles.css">
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
 
+body {
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 6rem 0;
+}
+
+h1, h2, h3 {
+  color: var(--heading-color);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+  color: #000;
+  box-shadow: 0 4px 15px rgba(0, 210, 255, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 210, 255, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--heading-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-cyan);
+}
+
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(58, 123, 213, 0.1) 0%, var(--bg-color) 70%);
+  z-index: -1;
+}
+
+.hero-content h1 {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+#about .about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-image {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.9rem;
+}
+
+.about-text {
+  font-size: 1.1rem;
+}
+
+#experience .timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(138, 43, 226, 0.4);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+#projects .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card h3 {
+  color: var(--accent-cyan);
+}
+
+.project-card p {
+  flex-grow: 1;
+  margin-top: 1rem;
+}
+
+.project-links {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.project-links a {
+  color: var(--heading-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+  color: var(--accent-blue);
+}
+
+#contact .contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  font-size: 1.1rem;
+}
+
+.contact-item strong {
+  color: var(--heading-color);
+  display: block;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.2rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.social-links a:hover {
+  background: var(--accent-blue);
+  color: var(--heading-color);
+  border-color: var(--accent-cyan);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 8px;
+  color: var(--heading-color);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+}
+
+footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  #about .about-content, #contact .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+}
+</style>
 </head>
-
 <body>
 
-<header>
-
-<nav>
-
-<ul>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#projects">Projects</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-<div class="intro">
-
-<h1>Le Trong Hieu</h1>
-
-<h2>AI Engineering Enthusiast</h2>
-
-</div>
-
-</header>
-
-<main>
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <h1>Hi, I am Lê Trọng Hiếu</h1>
+    <p>Computer Science Student at UIT | Aspiring AI Engineer</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+  </div>
+</section>
 
 <section id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <span>[Professional Portrait Placeholder]</span>
+      </div>
+      <div class="about-text">
+        <p>I am a passionate Computer Science student deeply interested in Artificial Intelligence, competitive programming, and advanced algorithms. With a strong foundation in C++ and Python, I constantly explore computer architecture, Object-Oriented Programming (OOP), and data structures to build optimized solutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h3>About Me</h3>
-
-<p>I am fascinated by AI’s potential to positively impact our daily lives. With that interest, I’m on a path to become an AI Engineer with the goal of integrating existing AI models into products to make human lives far easier. Currently, I’m a freshman majoring in Computer Science at the University of Information Technology - VNUHCM.</p>
-
+<section id="experience">
+  <div class="container">
+    <h2>Experience & Extracurriculars</h2>
+    <div class="timeline">
+      <div class="card">
+        <h3>Member of Google Developer Group on Campus (GDGoC) at UIT.</h3>
+      </div>
+      <div class="card">
+        <h3>Logistics Coordinator for DevFest on Campus</h3>
+        <p>Managed event logistics, attendee flow, and seating arrangements.</p>
+      </div>
+      <div class="card">
+        <h3>Core Planner for The Staging Environment 2026</h3>
+        <p>Developing proposals for a large-scale software engineering simulation event.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="projects">
-
-<h3>Projects</h3>
-
-<ul class="project-list">
-
-<li><strong>Project A</strong>: Brief description of project A.</li>
-
-<li><strong>Project B</strong>: Brief description of project B.</li>
-
-<li><strong>Project C</strong>: Brief description of project C.</li>
-
-</ul>
-
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="card project-card">
+        <h3>Student Management System</h3>
+        <p>Highlighting optimized input/output and data structure implementation.</p>
+        <div class="project-links">
+          <a href="#">GitHub Repository &rarr;</a>
+        </div>
+      </div>
+      <div class="card project-card">
+        <h3>AI Pharmacy Finder</h3>
+        <p>Algorithm design utilizing the divide and conquer approach.</p>
+        <div class="project-links">
+          <a href="#">GitHub Repository &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="contact me">
-
-<h3>Contact</h3>
-
-<p>Email: <a href="mailto:letronghieu09012007@gmail.com">letronghieu09012007@gmail.com</a></p>
-
-<p>
-
-<a href="https://github.com/HieuStudyingCS" target="_blank">GitHub Profile</a> |
-
-<a href="https://www.linkedin.com/in/1lth/" target="_blank">LinkedIn</a>
-
-</p>
-
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <div class="contact-wrapper">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <div class="contact-item">
+          <strong>Email</strong>
+          letronghieu09012007@gmail.com
+        </div>
+        <div class="contact-item">
+          <strong>Zalo</strong>
+          0379255473
+        </div>
+        <div class="social-links">
+          <a href="#" title="LinkedIn">in</a>
+          <a href="#" title="GitHub">gh</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-
-</main>
 
 <footer>
-
-<p>© 2025 Hieu Studying CS. All rights reserved.</p>
-
+  <p>&copy; 2026 Lê Trọng Hiếu. Built with passion and code.</p>
 </footer>
 
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 </body>
-
 </html>
