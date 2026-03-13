@@ -1,357 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Le Trong Hieu — Aspiring AI Engineer & CS Student</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Trong Hieu — Aspiring AI Engineer</title>
+  <meta name="description"
+    content="Le Trong Hieu — Aspiring AI Engineer and CS Student at UIT. Building intelligent systems that turn complex data into meaningful insights.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="cursor cursor-dot" id="cursorDot"></div>
-<div class="cursor cursor-ring" id="cursorRing"></div>
 
-<div class="grid-bg"></div>
+  <div class="cursor cursor-dot" id="cursorDot"></div>
+  <div class="cursor cursor-ring" id="cursorRing"></div>
 
-<nav>
-  <a href="#hero" class="nav-logo">LTH <span>// Portfolio</span></a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="noise-overlay" aria-hidden="true"></div>
 
-<section id="hero">
-  <div class="hero-inner">
-    <div class="hero-tag">Available for internships & collaborations</div>
-    <h1 class="hero-name">
-      <span class="first">Le Trong</span>
-      <span class="last">Hieu.</span>
-    </h1>
-    <p class="hero-tagline">
-      Computer Science <span class="highlight">UIT</span>&nbsp; · &nbsp;Aspiring AI Engineer
-    </p>
-    <p class="hero-intro">
-      I build intelligent systems that turn <strong>complex data into meaningful insights</strong>.
-      Passionate about the intersection of machine learning, software engineering,
-      and human-centred design — I'm driven to craft technology that actually matters.
-    </p>
-    <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">View My Work</a>
-      <a href="#contact" class="btn btn-outline">Get in Touch</a>
-    </div>
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo" aria-label="Go to top">LTH <span>// Portfolio</span></a>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"
+      aria-controls="mobileMenu">
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-label="Mobile navigation">
+    <ul role="list">
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#education" class="mobile-link">Education</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
   </div>
 
-  <div class="hero-orbit" aria-hidden="true">
-    <div class="orbit-ring"><div class="orbit-dot"></div></div>
-    <div class="orbit-ring"><div class="orbit-dot"></div></div>
-    <div class="orbit-ring"><div class="orbit-dot"></div></div>
-    <div class="orbit-core"></div>
-  </div>
+  <section id="hero" aria-label="Hero section">
 
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    Scroll
-  </div>
-</section>
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
 
-<div class="section-divider"></div>
+    <div class="hero-aurora" aria-hidden="true"></div>
 
-<section id="about">
-  <div class="section-label">About Me</div>
-  <h2 class="section-title">Curious mind.<br>Foundation builder.</h2>
+    <div class="hero-inner">
+      <div class="hero-tag" aria-label="Status indicator">
+        <span class="tag-dot" aria-hidden="true"></span>
+        Available for internships &amp; collaborations
+      </div>
 
-  <div class="about-grid reveal">
-    <div class="about-text">
-      <p>
-        I'm <strong>Le Trong Hieu</strong>, a first-year Computer Science student at the
-        <em>University of Information Technology (UIT)</em>, Ho Chi Minh City.
-        I am currently focusing on building a rock-solid foundation in core programming,
-        data structures, and algorithms.
-      </p>
-      <p>
-        From early on, I've had a deep curiosity for <strong>Artificial Intelligence</strong>.
-        While I'm mastering the fundamentals of software engineering and web technologies like HTML, CSS, and JavaScript, my ultimate goal is to explore how these systems can integrate with machine learning models to solve real-world problems.
-      </p>
-      <p>
-        I believe that great software starts with clarity of thought and continuous learning.
-        I communicate effectively in both <strong>English and Vietnamese</strong>, allowing me to collaborate broadly and access global research. I'm always eager to tackle hard problems and build elegant solutions.
+      <h1 class="hero-name">
+        <span class="first">Le Trong</span>
+        <span class="last">Hieu.</span>
+      </h1>
+
+      <p class="hero-tagline">
+        <span class="role-prefix">Computer Science · </span><span id="typewriter" aria-live="polite"></span><span
+          class="type-cursor" aria-hidden="true">|</span>
       </p>
 
-      <div class="about-stats">
-        <div class="stat-card">
-          <div class="stat-value">Freshman</div>
-          <div class="stat-label">UIT</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">2+</div>
-          <div class="stat-label">Projects Built</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">Python & C++</div>
-          <div class="stat-label">Core Stack</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">2</div>
-          <div class="stat-label">Languages Spoken</div>
-        </div>
+      <p class="hero-intro">
+        I build intelligent systems that turn <strong>complex data into meaningful insights</strong>.
+        Passionate about the intersection of machine learning, software engineering,
+        and human-centred design — I'm driven to craft technology that actually matters.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <span>View My Work</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+
+      <div class="hero-meta" aria-label="University affiliation">
+        <span class="meta-badge">🎓 University of Information Technology (UIT)</span>
       </div>
     </div>
 
-    <div>
-      <div class="about-values">
-        <div class="values-title">// Core Values</div>
-        <div class="value-item">
-          <div class="value-icon">🧠</div>
-          <div class="value-text">
-            <strong>Problem-solving skills</strong>
-            <span>I break down problems to their roots before reaching for solutions.</span>
+    <div class="hero-orbit" aria-hidden="true">
+      <div class="orbit-ring orbit-1">
+        <div class="orbit-dot"></div>
+      </div>
+      <div class="orbit-ring orbit-2">
+        <div class="orbit-dot"></div>
+      </div>
+      <div class="orbit-ring orbit-3">
+        <div class="orbit-dot"></div>
+      </div>
+      <div class="orbit-ring orbit-4">
+        <div class="orbit-dot"></div>
+      </div>
+      <div class="orbit-core">
+        <div class="orbit-core-inner"></div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section id="about" aria-label="About section">
+    <div class="section-label">About Me</div>
+    <h2 class="section-title">Curious mind.<br>Foundation builder.</h2>
+
+    <div class="about-grid">
+      <div class="about-text reveal-item">
+        <p>
+          I'm <strong>Le Trong Hieu</strong>, a first-year Computer Science student at the
+          <em>University of Information Technology (UIT)</em>, Ho Chi Minh City.
+          I am building a rock-solid foundation in core programming, data structures, and algorithms.
+        </p>
+        <p>
+          From early on, I've had a deep curiosity for <strong>Artificial Intelligence</strong>.
+          While mastering the fundamentals of software engineering, my ultimate goal is to explore
+          how systems can integrate with machine learning models to solve real-world problems.
+        </p>
+        <p>
+          I believe great software starts with clarity of thought and continuous learning.
+          I communicate effectively in both <strong>English and Vietnamese</strong> — always eager
+          to tackle hard problems and build elegant solutions.
+        </p>
+
+        <div class="about-stats" aria-label="Quick statistics">
+          <div class="stat-card">
+            <div class="stat-value" data-count-text="Freshman">Freshman</div>
+            <div class="stat-label">UIT</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-count-text="2+">2+</div>
+            <div class="stat-label">Projects Built</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-count-text="Python &amp; C++">Python &amp; C++</div>
+            <div class="stat-label">Core Stack</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-count-text="2">2</div>
+            <div class="stat-label">Languages Spoken</div>
           </div>
         </div>
+      </div>
 
-        <div class="value-item">
-          <div class="value-icon">🤝</div>
-          <div class="value-text">
-            <strong>Open Collaboration</strong>
-            <span>The best ideas emerge from diverse perspectives. 
-              I value knowledge-sharing and team collaboration.</span>
+      <div class="about-values-wrap reveal-item">
+        <div class="about-values">
+          <div class="values-title">// Core Values</div>
+          <div class="value-item">
+            <div class="value-icon" aria-hidden="true">🧠</div>
+            <div class="value-text">
+              <strong>Problem Solving</strong>
+              <span>I break down problems to their roots before reaching for solutions.</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon" aria-hidden="true">🤝</div>
+            <div class="value-text">
+              <strong>Collaboration</strong>
+              <span>The best ideas emerge from diverse perspectives. I value knowledge-sharing.</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon" aria-hidden="true">🚀</div>
+            <div class="value-text">
+              <strong>Continuous Growth</strong>
+              <span>The field moves fast. I commit to lifelong learning and staying ahead.</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon" aria-hidden="true">💡</div>
+            <div class="value-text">
+              <strong>Purposeful Impact</strong>
+              <span>Technology should solve real problems for real people. Impact over novelty.</span>
+            </div>
           </div>
         </div>
-        <div class="value-item">
-          <div class="value-icon">🚀</div>
-          <div class="value-text">
-            <strong>Continuous Growth</strong>
-            <span>The field moves fast. I commit to lifelong learning and staying ahead of the curve.</span>
-          </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+
+  <section id="skills" aria-label="Skills section">
+    <div class="section-label">Skills</div>
+    <h2 class="section-title">Tools of the trade.</h2>
+    <p class="section-desc">A working toolkit built from coursework, personal projects, and hands-on
+      experimentation.</p>
+
+    <div class="skills-grid">
+
+      <div class="skill-category reveal-item" data-accent="cyan">
+        <div class="skill-card-glow" aria-hidden="true"></div>
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon cyan" aria-hidden="true">⚡</div>
+          <div class="skill-cat-name">Programming Languages</div>
         </div>
-        <div class="value-item">
-          <div class="value-icon">💡</div>
-          <div class="value-text">
-            <strong>Purposeful Impact</strong>
-            <span>Technology should solve real problems for real people. Impact over novelty, always.</span>
-          </div>
+        <p class="skill-cat-desc">Core languages I reach for across backend systems, algorithms, and AI
+          research.</p>
+        <div class="skill-tags" role="list">
+          <span class="skill-tag hot" role="listitem">Python</span>
+          <span class="skill-tag hot" role="listitem">C++</span>
         </div>
       </div>
+
+      <div class="skill-category reveal-item" data-accent="purple">
+        <div class="skill-card-glow" aria-hidden="true"></div>
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon purple" aria-hidden="true">🤖</div>
+          <div class="skill-cat-name">AI / Machine Learning</div>
+        </div>
+        <p class="skill-cat-desc">Exploring classical ML and deep learning — building and training models from
+          scratch.</p>
+        <div class="skill-tags" role="list">
+          <span class="skill-tag hot purple-tag" role="listitem">Supervised Learning</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal-item" data-accent="green">
+        <div class="skill-card-glow" aria-hidden="true"></div>
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon green" aria-hidden="true">📊</div>
+          <div class="skill-cat-name">Data &amp; Analytics</div>
+        </div>
+        <p class="skill-cat-desc">Exploring and visualizing data to extract actionable insights.</p>
+        <div class="skill-tags" role="list">
+          <span class="skill-tag hot green-tag" role="listitem">Pandas</span>
+          <span class="skill-tag hot green-tag" role="listitem">NumPy</span>
+          <span class="skill-tag hot green-tag" role="listitem">Matplotlib</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal-item" data-accent="orange">
+        <div class="skill-card-glow" aria-hidden="true"></div>
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon orange" aria-hidden="true">🔧</div>
+          <div class="skill-cat-name">Dev Tools &amp; Infrastructure</div>
+        </div>
+        <p class="skill-cat-desc">Reliable workflows for version control, containers, and cloud deployment.</p>
+        <div class="skill-tags" role="list">
+          <span class="skill-tag hot" role="listitem">Git / GitHub</span>
+          <span class="skill-tag hot" role="listitem">Google Colab</span>
+          <span class="skill-tag hot" role="listitem">Docker</span>
+          <span class="skill-tag" role="listitem">Linux</span>
+          <span class="skill-tag" role="listitem">FastAPI</span>
+          <span class="skill-tag" role="listitem">REST APIs</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal-item" data-accent="cyan">
+        <div class="skill-card-glow" aria-hidden="true"></div>
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon cyan" aria-hidden="true">🧮</div>
+          <div class="skill-cat-name">CS Fundamentals</div>
+        </div>
+        <p class="skill-cat-desc">The rigorous underpinnings that make every system I build more sound.</p>
+        <div class="skill-tags" role="list">
+          <span class="skill-tag hot" role="listitem">Data Structures</span>
+          <span class="skill-tag hot" role="listitem">Algorithms</span>
+          <span class="skill-tag hot" role="listitem">OOP</span>
+          <span class="skill-tag hot" role="listitem">Design Patterns</span>
+        </div>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="section-divider"></div>
+  <div class="section-divider" aria-hidden="true"></div>
 
-<section id="skills">
-  <div class="section-label">Skills</div>
-  <h2 class="section-title">Tools of the trade.</h2>
-  <p class="section-desc">A working toolkit built from coursework, personal projects, and hands-on experimentation.</p>
+  <section id="projects" aria-label="Projects section">
+    <div class="section-label">Projects</div>
+    <h2 class="section-title">Things I've built.</h2>
+    <p class="section-desc">A selection of projects that pushed my skills, solved real problems, and taught me
+      something new each time.</p>
 
-  <div class="skills-grid reveal">
+    <div class="projects-grid">
 
-    <div class="skill-category">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon cyan">⚡</div>
-        <div class="skill-cat-name">Programming Languages</div>
-      </div>
-      <p class="skill-cat-desc">Core languages I reach for across backend systems, algorithms, and AI research.</p>
-      <div class="skill-tags">
-        <span class="skill-tag hot">Python</span>
-        <span class="skill-tag hot">C++</span>
-      </div>
+      <article class="project-card card-cyan reveal-item" aria-label="Personal Portfolio project">
+        <div class="project-card-glow" aria-hidden="true"></div>
+        <div class="project-num">// 01</div>
+        <h3 class="project-title">Personal Portfolio</h3>
+        <p class="project-desc">
+          My first web development project — designed from scratch to showcase who I am, what I've built, and
+          where I'm headed as an aspiring AI engineer.
+        </p>
+        <div class="project-problem">
+          <div class="project-problem-label">Learning Outcome</div>
+          <p>Learned how to design and build a complete website from the ground up — from layout and
+            typography to animations and responsive design.</p>
+        </div>
+        <div class="project-stack" aria-label="Tech stack">
+          <span class="stack-tag">HTML</span>
+          <span class="stack-tag">CSS</span>
+          <span class="stack-tag">JavaScript</span>
+        </div>
+        <div class="project-takeaway">
+          <span class="takeaway-icon" aria-hidden="true">✦</span>
+          <span>Hands-on first project in web development.</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/HieuStudyingCS/My-Portfolio" target="_blank" rel="noopener noreferrer"
+            class="project-link" aria-label="View on GitHub">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.74-1.33-1.74-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card card-purple reveal-item" aria-label="Message Services project">
+        <div class="project-card-glow" aria-hidden="true"></div>
+        <div class="project-num">// 02</div>
+        <h3 class="project-title">Message Services — Dependency Injection Visualizer</h3>
+        <p class="project-desc">
+          A system demonstrating several important software design patterns. Built while studying Design
+          Patterns to deeply understand architectural principles.
+        </p>
+        <div class="project-problem">
+          <div class="project-problem-label">Patterns Implemented</div>
+          <p>Dependency Injection · Factory Pattern · Strategy Pattern</p>
+        </div>
+        <div class="project-stack" aria-label="Tech stack">
+          <span class="stack-tag stack-purple">C++</span>
+          <span class="stack-tag stack-purple">Design Patterns</span>
+          <span class="stack-tag stack-purple">OOP</span>
+        </div>
+        <div class="project-takeaway">
+          <span class="takeaway-icon" aria-hidden="true">✦</span>
+          <span>Deepened understanding of patterns for designing maintainable, decoupled systems.</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/HieuStudyingCS/Dependency-Injection---MessageService" target="_blank"
+            rel="noopener noreferrer" class="project-link purple-link" aria-label="View on GitHub">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.74-1.33-1.74-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </article>
+
     </div>
+  </section>
 
-    <div class="skill-category">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon purple">🤖</div>
-        <div class="skill-cat-name">AI / Machine Learning</div>
-      </div>
-      <p class="skill-cat-desc">Exploring classical ML and deep learning — building and training models.</p>
-      <div class="skill-tags">
-        <span class="skill-tag hot">Supervised Learning</span>
-      </div>
-    </div>
+  <div class="section-divider" aria-hidden="true"></div>
 
-    <div class="skill-category">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon green">📊</div>
-        <div class="skill-cat-name">Data & Analytics</div>
-      </div>
-      <p class="skill-cat-desc">Exploring and visualizing data.</p>
-      <div class="skill-tags">
-        <span class="skill-tag hot">Pandas</span>
-        <span class="skill-tag hot">NumPy</span>
-        <span class="skill-tag hot">Matplotlib</span>
-      </div>
-    </div>
+  <section id="education" aria-label="Education section">
+    <div class="section-label">Education</div>
+    <h2 class="section-title">Academic foundation.</h2>
 
-    <div class="skill-category">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon orange">🔧</div>
-        <div class="skill-cat-name">Dev Tools & Infrastructure</div>
-      </div>
-      <p class="skill-cat-desc">Reliable workflows for version control, containers, and cloud deployment.</p>
-      <div class="skill-tags">
-        <span class="skill-tag hot">Git/GitHub</span>
-        <span class="skill-tag hot">Google Colab</span>
-        <span class="skill-tag hot">Docker</span>
-        <span class="skill-tag">Linux</span>
-        <span class="skill-tag">VS Code</span>
-        <span class="skill-tag">REST APIs</span>
-        <span class="skill-tag">FastAPI</span>
-      </div>
-    </div>
-
-    <div class="skill-category">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon cyan">🧮</div>
-        <div class="skill-cat-name">CS Fundamentals</div>
-      </div>
-      <p class="skill-cat-desc">The rigorous underpinnings that make every system I build more sound.</p>
-      <div class="skill-tags">
-        <span class="skill-tag hot">Data Structures & Algorithms</span>
-        <span class="skill-tag hot">Design Patterns</span>
-        <span class="skill-tag hot">OOP</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<section id="projects">
-  <div class="section-label">Projects</div>
-  <h2 class="section-title">Things I've built.</h2>
-  <p class="section-desc">A selection of
-   projects that pushed my skills, solved real problems, and taught me something new each time.</p>
-
-  <div class="projects-grid reveal">
-
-    <div class="project-card card-cyan">
-      <div class="project-num">// 01</div>
-      <h3 class="project-title">Personal Portfolio</h3>
-      <p class="project-desc">
-        This is my first project related to Web Development 
-      </p>
-      <div class="project-problem">
-        <div class="project-problem-label">Problem Solved</div>
-        <p>This is the easiest way to showcase not only who I am, but also my awesome projects.</p>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">HTML/CSS</span>
-      </div>
-      <div class="project-takeaway">
-        <span class="takeaway-icon">✦</span>
-        <span>Learned how to make a website.</span>
-      </div>
-    </div>
-
-    <div class="project-card card-purple">
-      <div class="project-num">// 02</div>
-      <h3 class="project-title">Message Services - Dependency Injection Visualizer</h3>
-      <p class="project-desc">
-        A project I built while studying Design Patterns. It implements the Factory, Dependency Injection, and Strategy patterns.
-      </p>
-      <div class="project-problem">
-        <div class="project-problem-label">Problem Solved</div>
-        <p>Reduces tight coupling between classes.</p>
-        <p>Improves code reusability and flexibility.</p>
-        <p>Makes unit testing easier by allowing mock dependencies.</p>
-        <p>Enhances maintainability and scalability of the system.</p>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">C++</span>
-        <span class="stack-tag">Dependency Injection Design Pattern</span>
-        <span class="stack-tag">Factory Design Pattern</span>
-        <span class="stack-tag">Strategy Design Pattern</span>
-      </div>
-      <div class="project-takeaway">
-        <span class="takeaway-icon">✦</span>
-        <span>Deepened my understanding of patterns that are useful for designing systems.</span>
-      </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<section id="education">
-  <div class="section-label">Education</div>
-  <h2 class="section-title">Academic foundation.</h2>
-
-  <div class="reveal">
-    <div class="edu-card">
-      <div>
-        <div class="edu-badge">🎓</div>
+    <div class="edu-card reveal-item" role="article" aria-label="University of Information Technology">
+      <div class="edu-card-glow" aria-hidden="true"></div>
+      <div class="edu-left">
+        <div class="edu-badge" aria-hidden="true">🎓</div>
         <div class="edu-degree">B.Sc. Computer Science</div>
         <div class="edu-school">University of Information Technology (UIT)</div>
         <div class="edu-duration">// August 2025 — Ongoing</div>
-        <div class="edu-gpa">⭐ GPA 3.7 / 4.0 — First Year</div>
-        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.7; max-width:380px;">
-          As a first-year student at one of Vietnam's leading technology universities, I am establishing a strong academic foundation. My current coursework emphasizes theoretical computer science, logic, and practical programming, setting the stage for my future specialization in Artificial Intelligence.
+        <div class="edu-gpa">
+          <span aria-hidden="true">⭐</span>
+          GPA 3.7 / 4.0 — First Year
+        </div>
+        <p class="edu-desc">
+          As a first-year student at one of Vietnam's leading technology universities, I am establishing a
+          strong academic foundation. My current coursework emphasizes theoretical computer science,
+          logic, and practical programming — setting the stage for my future specialization in
+          Artificial Intelligence.
         </p>
       </div>
-      <div>
+      <div class="edu-right">
         <div class="edu-courses-title">// Relevant Coursework</div>
-        <div class="course-list">
-          <span class="course-tag">Data Structures & Algorithms</span>
-          <span class="course-tag">Machine Learning Basics</span>
-          <span class="course-tag">Programming Fundamentals</span>
-          <span class="course-tag">Web Development</span>
-          <span class="course-tag">Calculus</span>
-          <span class="course-tag">Linear Algebra</span>
+        <div class="course-list" role="list">
+          <span class="course-tag" role="listitem">Data Structures &amp; Algorithms</span>
+          <span class="course-tag" role="listitem">Machine Learning Basics</span>
+          <span class="course-tag" role="listitem">Programming Fundamentals</span>
+          <span class="course-tag" role="listitem">Web Development</span>
+          <span class="course-tag" role="listitem">Calculus</span>
+          <span class="course-tag" role="listitem">Linear Algebra</span>
+        </div>
+
+        <div class="edu-highlights">
+          <div class="edu-highlight-title">// Highlights</div>
+          <div class="edu-highlight-item">
+            <span class="highlight-dot" aria-hidden="true"></span>
+            <span>Maintaining strong GPA in first year</span>
+          </div>
+          <div class="edu-highlight-item">
+            <span class="highlight-dot highlight-purple" aria-hidden="true"></span>
+            <span>Actively building projects alongside coursework</span>
+          </div>
+          <div class="edu-highlight-item">
+            <span class="highlight-dot highlight-green" aria-hidden="true"></span>
+            <span>Member of university developer community</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="section-divider"></div>
+  <div class="section-divider" aria-hidden="true"></div>
 
-<section id="contact">
-  <div class="section-label" style="justify-content:center;">Contact</div>
-  <h2 class="section-title" style="text-align:center;">Let's build something together.</h2>
-  <p class="section-desc" style="margin:0 auto 3rem; text-align:center;">
-    Whether you have an internship opportunity, a project collaboration, or just want to talk tech —
-    my inbox is always open. I respond to every message.
-  </p>
+  <section id="contact" aria-label="Contact section">
+    <div class="section-label" style="justify-content:center;">Contact</div>
+    <h2 class="section-title" style="text-align:center;">Let's build something together.</h2>
+    <p class="section-desc" style="margin:0 auto 3rem; text-align:center;">
+      Whether you have an internship opportunity, a project collaboration, or just want to talk tech —
+      my inbox is always open. I respond to every message.
+    </p>
 
-  <div class="contact-inner reveal">
-    <a href="mailto:letronghieu09012007@gmail.com" class="contact-email">letronghieu09012007@gmail.com</a>
-    <div class="social-links">
-      <a href="https://github.com/HieuStudyingCS" target="_blank" class="social-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.74-1.33-1.74-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        GitHub
+    <div class="contact-inner reveal-item">
+      <div class="contact-card-glow" aria-hidden="true"></div>
+
+      <a href="mailto:letronghieu09012007@gmail.com" class="contact-email" aria-label="Send email to Le Trong Hieu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <polyline points="22,6 12,13 2,6" />
+        </svg>
+        letronghieu09012007@gmail.com
       </a>
-      <a href="https://www.linkedin.com/in/1lth/" target="_blank" class="social-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://drive.google.com/file/d/19eaT0dGrjKmwi2MA3mePiHrpnDnmhfHI/view?usp=sharing" target="_blank" class="social-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-        My Resume
-      </a>
+
+      <div class="social-links" role="list">
+        <a href="https://github.com/HieuStudyingCS" target="_blank" rel="noopener noreferrer" class="social-link"
+          role="listitem" aria-label="GitHub profile">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.74-1.33-1.74-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/1lth/" target="_blank" rel="noopener noreferrer" class="social-link"
+          role="listitem" aria-label="LinkedIn profile">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+          </svg>
+          LinkedIn
+        </a>
+        <a href="https://drive.google.com/file/d/19eaT0dGrjKmwi2MA3mePiHrpnDnmhfHI/view?usp=sharing" target="_blank"
+          rel="noopener noreferrer" class="social-link" role="listitem" aria-label="Download resume">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+          </svg>
+          Resume
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="footer-copy">© 2026 <span>Le Trong Hieu</span>. Built with intention.</div>
-  <div class="footer-links">
-    <a href="#hero">Top</a>
-    <a href="mailto:letronghieu09012007@gmail.com">Email</a>
-    <a href="https://github.com/HieuStudyingCS" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/1lth/" target="_blank">LinkedIn</a>
-    <a href="https://drive.google.com/file/d/19eaT0dGrjKmwi2MA3mePiHrpnDnmhfHI/view?usp=sharing" target = "_blank">My Resume</a>
-  </div>
-</footer>
+  <footer role="contentinfo">
+    <div class="footer-copy">© 2026 <span>Le Trong Hieu</span>. All rights reserved.</div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="#hero">Top</a>
+      <a href="mailto:letronghieu09012007@gmail.com">Email</a>
+      <a href="https://github.com/HieuStudyingCS" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/1lth/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://drive.google.com/file/d/19eaT0dGrjKmwi2MA3mePiHrpnDnmhfHI/view?usp=sharing" target="_blank"
+        rel="noopener noreferrer">Resume</a>
+    </nav>
+  </footer>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
+
 </html>
