@@ -46,6 +46,14 @@ No build step required — just open `index.html` in any modern browser.
 npx serve .
 ```
 
+## License
+
+The source code of this project is released under the [MIT License](LICENSE).
+
+All documentation, articles, and images (Content) are licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/).
+
+This means you are free to share and adapt the material, provided that you **give appropriate credit** and **do not use the material for commercial purposes**.
+
 ## 📬 Contact
 
 - **GitHub:** [HieuStudyingCS](https://github.com/HieuStudyingCS)
