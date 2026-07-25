@@ -38,3 +38,4 @@ This means you are free to share and adapt the material, provided that you **giv
 
 - **GitHub:** [HieuStudyingCS](https://github.com/HieuStudyingCS)
 - **LinkedIn:** [1lth](https://www.linkedin.com/in/1lth/)
+- **CV:** [CV](https://drive.google.com/file/d/1OwOHq1xgNIgBm0LRj2UblSEpIiWqHUV7/view?usp=sharing)
